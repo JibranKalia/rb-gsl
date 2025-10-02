@@ -32,6 +32,8 @@ end
 
 if /mingw/ =~ RUBY_PLATFORM
   GSL_CONFIG = "sh gsl-config"
+elsif File.exist?("/app/vendor/gsl/bin/gsl-config")
+  GSL_CONFIG = "/app/vendor/gsl/bin/gsl-config"
 else
   GSL_CONFIG = "gsl-config"
 end
